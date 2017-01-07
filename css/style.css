@@ -1,0 +1,254 @@
+html,body{
+    background-color: #F7F7F7;
+    font-size: 16px;
+}
+section.top{
+    /*height: 100vh;*/
+}
+/**********  Header **********/
+header{
+    padding: 50px;
+}
+    header .menu{
+        float: right;
+    }
+        header .menu .hamburger{
+            position: relative;
+            z-index: 99;
+        }
+            header .menu .hamburger-box{
+                width: 35px;
+            }
+            header .menu .hamburger .hamburger-inner,
+            header .menu .hamburger .hamburger-inner::before,
+            header .menu .hamburger .hamburger-inner::after{
+                width: 35px;
+            }
+            header .menu .hamburger.is-active .hamburger-inner,
+            header .menu .hamburger.is-active .hamburger-inner::before,
+            header .menu .hamburger.is-active .hamburger-inner::after{
+                background-color: #222;
+            }
+        header .menu nav{
+            background-color: #eee;
+            padding: 15px 15px 0px 15px;
+            position: absolute;
+            right:20px;
+            top:20px;
+            display: none;
+        }
+            header nav ul{
+                list-style: none;
+                display: block;
+                text-align: right;
+                margin-bottom: 0px;
+                padding-right: 100px;
+                direction: rtl;
+            }
+                header nav ul li{
+                    display: inline-block;
+                    margin-right: 20px;
+                }
+                header nav ul li:first-child{
+                    margin-right: 0px;
+                }
+                    header nav ul li a{
+                        text-decoration: none;
+                        color: #222;
+                    }
+    header .logo{
+        float: left;
+    }
+        header .logo img{
+            max-width: 100%;
+            height: auto;
+            height: 55px;
+            vertical-align: middle;
+        }
+/********** Intro **********/
+.intro{
+    width: 100%;
+    max-width: 100%;
+    clear: both;
+    margin: 0 auto;
+}
+    .intro .intro_box_bg{
+        background-image: url(../images/macbook.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 300px;
+        position: relative;
+    }
+       .intro .intro_inner_box_bg{
+           position: absolute;
+           left: 0px;
+           right: 0px;
+           top: 0px;
+           bottom: 0px;
+           background-color: #DCDA0C;
+           opacity: .2;
+       }
+    .intro .intro_text{
+        margin-left: 2%;
+        padding: 20px 20px 35px 20px;
+    }
+        .intro .intro_text h2{
+            font-size: 2em;
+            color: #222;
+            margin-bottom: 20px;
+            position: relative;
+            background-color: #F7F7F7;
+            margin-left: -30%;
+            padding: 15px;
+            margin-top: 20px;
+            padding-left: 50px;
+        }
+            .intro .intro_text h2:before{
+                content: '';
+                position: absolute;
+                left: 35px;
+                top: 20px;
+                bottom: 20px;
+                width: 5px;
+                background-color: #DCDA0C;
+            }
+        .intro .intro_text p{
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .intro .intro_text span{
+            font-size: 13px;
+            color: #777;
+        }
+/********** Project **********/
+.projects{
+    padding: 50px 0px;
+    text-align: center;
+}
+    .projects h2{
+        color: #555;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        margin-bottom: 50px;
+    }
+    .projects .columns{
+        margin-bottom: 2%;
+        margin-left: 2%;
+    }
+        .projects .columns a{
+            text-decoration: none;
+            display: block;
+            position: relative;
+        }
+        .projects .columns a:hover .overlay{
+            visibility: visible;
+        }
+            .projects figure{
+                overflow: hidden;
+                max-height: 250px;
+                margin: 0 auto;
+            }
+                .projects figure img{
+                    object-fit: cover;
+                    object-position: center;
+                    height: 250px;
+                    max-width: 100%;
+                }
+            .projects .overlay{
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                top: 0px;
+                bottom: 0px;
+                background-color: rgba(220, 218, 12, 0.40);
+                visibility: hidden;
+                text-align: center;
+            }
+                .projects .overlay .dot{
+                    background-image: url(../images/ellipse.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    height: 52px;
+                    width: 52px;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    -ms-transform: translate(-50%, -50%);
+                    -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%);
+                }
+    .projects .link{
+        color: #555;
+        font-size: 16px;
+        margin-top: 50px;
+        letter-spacing: 1px;
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+    }
+        .projects .link:after{
+            content: '';
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: -2px;
+            height: 1px;
+            background-color: #555;
+        }
+/********** Services **********/
+.services{
+    padding: 50px 0px;
+    text-align: center;
+    background-color: #EBEBEB
+}
+    .services h2{
+        color: #555;
+        font-size: 1.5em;
+        letter-spacing: 1px;
+        margin-bottom: 50px;
+    }
+    .services figure{
+        text-align: center;
+        overflow: hidden;
+        margin: 0 auto;
+        max-height: 200px;
+        min-height: 200px;
+    }
+        .services figure img{
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    .services .columns p{
+        color: #222;
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+    .services .columns span{
+        color: #777;
+        font-size: 13px;
+        line-height: normal;
+    }
+/********** Language **********/
+.programming_language{
+    padding: 40px;
+    text-align: center;
+    background-color: #dcda0c;
+}
+    .programming_language ul{
+        list-style: none;
+        margin-bottom: 0px;
+        display: block;
+    }
+        .programming_language ul li{
+            display: inline-block;
+            margin-left: 6%;
+            margin-bottom: 0px;
+        }
+        .programming_language ul li:first-child{
+            margin-left: 0px;
+        }
+            .programming_language ul li img{
+                height: 60px;
+            }
