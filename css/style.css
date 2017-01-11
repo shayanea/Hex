@@ -1,9 +1,122 @@
+@font-face {
+    font-family: 'IRANSANS BOLD';
+    src: url('../font/IRANSansWeb_Bold.woff') format('woff'), url('../font/IRANSansWeb_Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'IRANSANS';
+    src: url('../font/IRANSansWeb.woff') format('woff'), url('../font/IRANSansWeb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Reckoner';
+    src: url('../font/Reckoner.woff') format('woff'), url('../font/Reckoner.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 html,body{
     background-color: #F7F7F7;
     font-size: 16px;
+    font-family: 'IRANSANS';
 }
-section.top{
-    /*height: 100vh;*/
+@-webkit-keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
 }
 /**********  Header **********/
 header{
@@ -81,13 +194,13 @@ header{
         position: relative;
     }
        .intro .intro_inner_box_bg{
-           position: absolute;
-           left: 0px;
-           right: 0px;
-           top: 0px;
-           bottom: 0px;
-           background-color: #DCDA0C;
-           opacity: .2;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+            background-color: #dcda0c;
+            opacity: .25;
        }
     .intro .intro_text{
         margin-left: 2%;
@@ -95,32 +208,36 @@ header{
     }
         .intro .intro_text h2{
             font-size: 2em;
-            color: #222;
+            color: #545454;
             margin-bottom: 20px;
             position: relative;
             background-color: #F7F7F7;
             margin-left: -30%;
-            padding: 15px;
+            padding: 25px 15px 15px 15px;
             margin-top: 20px;
             padding-left: 50px;
+            font-weight: bold;
+            letter-spacing: .5px;
         }
             .intro .intro_text h2:before{
                 content: '';
                 position: absolute;
                 left: 35px;
-                top: 20px;
+                top: 25px;
                 bottom: 20px;
                 width: 5px;
                 background-color: #DCDA0C;
             }
         .intro .intro_text p{
-            font-size: 16px;
-            color: #555;
+            font-size: 21px;
+            color: #686868;
             margin-bottom: 15px;
+            font-weight: bold;
         }
         .intro .intro_text span{
-            font-size: 13px;
-            color: #777;
+            font-size: 15px;
+            color: #848484;
+            font-style: italic;
         }
 /********** Project **********/
 .projects{
@@ -143,18 +260,26 @@ header{
             position: relative;
         }
         .projects .columns a:hover .overlay{
+            animation-name: fadeIn;
+        }
+        .projects .columns a:hover .overlay,
+        .projects .columns a:hover .overlay .dot{
             visibility: visible;
+        }
+        .projects .columns a:hover .overlay .dot{
+            animation-name: bounceInUp;
         }
             .projects figure{
                 overflow: hidden;
-                max-height: 250px;
+                max-height: 230px;
                 margin: 0 auto;
             }
                 .projects figure img{
                     object-fit: cover;
                     object-position: center;
-                    height: 250px;
+                    height: 230px;
                     max-width: 100%;
+                    width: 100%;
                 }
             .projects .overlay{
                 position: absolute;
@@ -162,16 +287,18 @@ header{
                 right: 0px;
                 top: 0px;
                 bottom: 0px;
-                background-color: rgba(220, 218, 12, 0.40);
+                background-color: rgba(220, 218, 12, 0.29);
                 visibility: hidden;
                 text-align: center;
+                overflow: hidden;
+                -webkit-animation-duration: .5s;
+                animation-duration: .5s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
             }
-                .projects .overlay .dot{
-                    background-image: url(../images/ellipse.png);
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                    height: 52px;
-                    width: 52px;
+                .projects .overlay .preview{
+                    width: 54px;
+                    height: 54px;
                     position: absolute;
                     left: 50%;
                     top: 50%;
@@ -179,6 +306,37 @@ header{
                     -webkit-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%);
                 }
+                    .projects .overlay .preview .dot{
+                        -webkit-animation-duration: .5s;
+                        animation-duration: .5s;
+                        -webkit-animation-fill-mode: both;
+                        animation-fill-mode: both;
+                        visibility: hidden;
+                        background-color: #d4c30c;
+                        width: 15px;
+                        height: 15px;
+                        position: relative;
+                        border-radius: 100%;
+                        margin: 20px auto;
+                    }
+                    .projects .overlay .preview .dot:after{
+                        content: '{';
+                        position: absolute;
+                        color: #fff;
+                        left: -13px;
+                        top: -31px;
+                        font-size: 3.2em;
+                        font-family: 'Reckoner';
+                    }
+                    .projects .overlay .preview .dot:before{
+                        content: '}';
+                        position: absolute;
+                        color: #fff;
+                        right: -17px;
+                        top: -31px;
+                        font-size: 3.2em;
+                        font-family: 'Reckoner';
+                    }
     .projects .link{
         color: #555;
         font-size: 16px;
@@ -199,14 +357,14 @@ header{
         }
 /********** Services **********/
 .services{
-    padding: 50px 0px;
+    padding: 80px 0px;
     text-align: center;
     background-color: #EBEBEB
 }
     .services h2{
-        color: #555;
-        font-size: 1.5em;
-        letter-spacing: 1px;
+        color: #434343;
+        font-size: 1.7em;
+        letter-spacing: 1.5px;
         margin-bottom: 50px;
     }
     .services figure{
@@ -221,14 +379,16 @@ header{
             margin: 0 auto;
         }
     .services .columns p{
-        color: #222;
-        font-size: 1.3em;
+        color: #434343;
+        font-size: 1.6em;
         margin-bottom: 15px;
+        font-weight: bold;
     }
     .services .columns span{
-        color: #777;
+        color: #686868;
         font-size: 13px;
         line-height: normal;
+        font-weight: bold;
     }
 /********** Language **********/
 .programming_language{
@@ -252,3 +412,9 @@ header{
             .programming_language ul li img{
                 height: 60px;
             }
+/********** Resposive **********/
+@media(min-width:1600px){
+    .container{
+        max-width: 1200px;
+    }
+}
